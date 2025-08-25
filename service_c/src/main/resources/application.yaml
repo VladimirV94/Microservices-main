@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: service_c
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+  datasource:
+    url: ${DATASOURCE_URL}
+    password: ${DATASOURCE_PASSWORD}
+    username: ${DATASOURCE_USERNAME}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
